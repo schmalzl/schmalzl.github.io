@@ -6,7 +6,7 @@ import { renderLibrary } from './library.js';
 import { fmt } from './config.js';
 const $ = id => document.getElementById(id);
 export function initPlayer(flat) {
-  const a = new Audio(); a.preload = 'none'; a.volume = St.get('volume');
+  const a = new Audio(); a.preload = 'none'; 
   const lib = renderLibrary($('lib'), flat, n => go(n, true));
   let i = -1, ctx = null, lastT = 0, seeking = false, pos = 0, saved = 0;
   const status = s => { $('status').textContent = s; };
@@ -16,6 +16,7 @@ export function initPlayer(flat) {
       try {
         if (navigator.audioSession) navigator.audioSession.type = 'playback';
         ctx = new (window.AudioContext || window.webkitAudioContext)();
+        ctx.onstatechange = () => { if (ctx.state !== 'running' && !a.paused) ctx.resume().catch(() => {}); };
         const an = ctx.createAnalyser(); an.fftSize = 1024; an.smoothingTimeConstant = 0.8;
         ctx.createMediaElementSource(a).connect(an); an.connect(ctx.destination);
         startVis($('vis'), an, () => ({ type: St.get('vis'), on: St.get('visOn'), sens: St.get('sens'), color: St.get('color'), fps: St.get('fps') }));
@@ -38,8 +39,7 @@ export function initPlayer(flat) {
   $('prev').onclick = () => (a.currentTime > 3 ? (a.currentTime = 0) : step(-1));
   $('mode').onclick = () => { const m = ['one', 'all', 'none']; St.set('repeat', m[(m.indexOf(St.get('repeat')) + 1) % 3]); };
   St.onChange(k => { if (k === 'repeat' || k === '*') label(); });
-  $('vol').value = St.get('volume'); label();
-  $('vol').oninput = e => { a.volume = +e.target.value; St.set('volume', a.volume); };
+  label();
   $('seek').onpointerdown = () => { seeking = true; };
   $('seek').onpointerup = () => { seeking = false; };
   $('seek').oninput = e => { if (a.duration) a.currentTime = e.target.value / 1000 * a.duration; };

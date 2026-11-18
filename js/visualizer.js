@@ -22,11 +22,11 @@ export function startVis(cv, an, opt) {
     if (o.type === 'meter') {
       let r = 0; for (const v of t) r += ((v - 128) / 128) ** 2;
       const lv = Math.min(1, Math.sqrt(r / t.length) * s * 2.5), n = 24, bw = W / n;
-      for (let i = 0; i < n; i++) { g.fillStyle = i < n * 0.6 ? o.color : i < n * 0.85 ? '#2D7BFF' : '#FF3030'; g.globalAlpha = i / n < lv ? 1 : 0.15; g.fillRect(i * bw + 1, H * 0.2, bw - 2, H * 0.6); }
+      for (let i = 0; i < n; i++) { g.fillStyle = i < n * 0.6 ? o.color : i < n * 0.85 ? '#FFD400' : '#FF3030'; g.globalAlpha = i / n < lv ? 1 : 0.15; g.fillRect(i * bw + 1, H * 0.2, bw - 2, H * 0.6); }
       g.globalAlpha = 1;
     } else if (o.type === 'spectrum') {
       const n = 40, bw = W / n, max = f.length * 0.7;
-      for (let i = 0; i < n; i++) { const v = Math.min(1, f[Math.floor(i / n * max)] / 255 * s), bh = v * H; g.fillStyle = v > 0.9 ? '#FF3030' : v > 0.7 ? '#2D7BFF' : o.color; g.fillRect(i * bw + 1, H - bh, bw - 2, bh); }
+      for (let i = 0; i < n; i++) { const v = Math.min(1, f[Math.floor(i / n * max)] / 255 * s), bh = v * H; g.fillStyle = v > 0.9 ? '#FF3030' : v > 0.7 ? '#1D56B8' : o.color; g.fillRect(i * bw + 1, H - bh, bw - 2, bh); }
     } else if (o.type === 'waveform') {
       g.fillStyle = o.color; const step = Math.max(1, Math.floor(t.length / (W / 3)));
       for (let x = 0, i = 0; x < W && i + step <= t.length; x += 3, i += step) { let m = 0; for (let k = 0; k < step; k++) m = Math.max(m, Math.abs(t[i + k] - 128)); const bh = Math.min(H, m / 128 * H * s); g.fillRect(x, (H - bh) / 2, 2, Math.max(1, bh)); }

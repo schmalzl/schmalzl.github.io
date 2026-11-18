@@ -1,6 +1,25 @@
 SUBSONIC CHANGELOG
 ==================
 
+VERSION 0.1.2
+DATE: 2026-11-18
+
+[ADDED]
+- Logout button in the navigation.
+
+[CHANGED]
+- Darker blue and a deeper, greener green.
+- Meter visualizer uses yellow for its middle range again.
+- Buttons, inputs and track rows are slimmer; the analyzer is shorter.
+- Compact layout is now the default (use Reset settings to apply it to existing settings).
+- Less spacing between items in Settings.
+- Removed the volume sliders (use the device volume).
+
+[FIXED]
+- iPhone: the login screen no longer zooms in when selecting a field.
+- Confirmations use an in-page dialog instead of the browser dialog, which interrupted audio and left the song running silently.
+- The audio engine resumes automatically if the system suspends it during playback.
+
 VERSION 0.1.1
 DATE: 2026-11-18
 

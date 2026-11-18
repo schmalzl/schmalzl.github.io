@@ -19,14 +19,14 @@
 </section>
 <section id="loading" hidden><pre id="log"></pre><div class="bar"><i id="pb"></i></div><div id="pct" class="mono">0%</div></section>
 <main id="app" hidden>
-<nav id="nav"><button data-t="music" class="on">MUSIC</button><button data-t="settings">SETTINGS</button><button data-t="about">ABOUT</button><button data-t="stats">STATS</button></nav>
+<nav id="nav"><button data-t="music" class="on">MUSIC</button><button data-t="settings">SETTINGS</button><button data-t="about">ABOUT</button><button data-t="stats">STATS</button><button id="lo" class="danger">LOGOUT</button></nav>
 <section id="music" class="tab on">
 <div class="ca">
 <div class="panel"><h2>NOW PLAYING</h2><div class="lcd"><div id="title">NO TRACK</div><div id="artist" class="dim">-</div><div id="status">STOPPED</div></div><div id="err" class="err"></div></div>
 <div class="panel"><h2>CONTROLS</h2>
 <div class="ctl"><button id="prev">PREV</button><button id="pp" class="big">PLAY</button><button id="next">NEXT</button></div>
 <div class="ctl"><span id="tcur" class="mono">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="tdur" class="mono">0:00</span></div>
-<div class="ctl"><span class="mono dim">VOL</span><input id="vol" type="range" min="0" max="1" step="0.01" aria-label="Volume"><button id="mode"></button></div></div>
+<div class="ctl"><button id="mode"></button></div></div>
 <div class="panel"><h2>ANALYZER</h2><canvas id="vis"></canvas></div>
 </div>
 <div class="panel cb"><h2>LIBRARY</h2><input id="q" type="search" placeholder="Search artist or track" aria-label="Search"><div id="lib"></div></div>

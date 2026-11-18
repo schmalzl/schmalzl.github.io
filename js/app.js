@@ -1,4 +1,4 @@
-import { CONFIG as C, esc } from './config.js';
+import { CONFIG as C, esc, ask } from './config.js';
 import * as S from './storage.js';
 import * as St from './settings.js';
 import * as Stats from './statistics.js';
@@ -63,5 +63,6 @@ $('nav').onclick = e => {
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b === e.target));
   document.querySelectorAll('.tab').forEach(s => s.classList.toggle('on', s.id === t));
   if (t === 'settings') St.render($('set'), { reset: St.reset, stats: Stats.reset, all: () => { S.clearAll(); location.reload(); } });
-  if (t === 'stats') { Stats.render($('st')); $('st').insertAdjacentHTML('beforeend', '<button id="rs" class="danger">RESET STATISTICS</button>'); $('rs').onclick = () => { if (confirm('Delete all listening statistics?')) { Stats.reset(); Stats.render($('st')); } }; }
+  if (t === 'stats') { Stats.render($('st')); $('st').insertAdjacentHTML('beforeend', '<button id="rs" class="danger">RESET STATISTICS</button>'); $('rs').onclick = async () => { if (await ask('Delete all listening statistics?')) { Stats.reset(); Stats.render($('st')); } }; }
 };
+$('lo').onclick = () => location.reload();

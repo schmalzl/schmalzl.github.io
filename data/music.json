@@ -9,6 +9,91 @@
           "format": "mp3"
         }
       ]
+    },
+    {
+      "name": "TikTok Sounds",
+      "tracks": [
+        {
+          "title": "addiction sped up + bass boosted",
+          "file": "sound/TikTok%20Sounds/addiction%20sped%20up%20%2B%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "Balenciaga bass boosted",
+          "file": "sound/TikTok%20Sounds/Balenciaga%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "basshunter - dota - bass boosted",
+          "file": "sound/TikTok%20Sounds/basshunter%20-%20dota%20-%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "burst mode",
+          "file": "sound/TikTok%20Sounds/burst%20mode.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "Chevelle-Comfortable Liar [Bass Bosted]",
+          "file": "sound/TikTok%20Sounds/Chevelle-Comfortable%20Liar%20%5BBass%20Bosted%5D.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "fotz",
+          "file": "sound/TikTok%20Sounds/fotz.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "get a way bass boosted",
+          "file": "sound/TikTok%20Sounds/get%20a%20way%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "japanese hardtekk (5 hours)",
+          "file": "sound/TikTok%20Sounds/japanese%20hardtekk%20%285%20hours%29.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "kissing hardtekk (tiny version)",
+          "file": "sound/TikTok%20Sounds/kissing%20hardtekk%20%28tiny%20version%29.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "Mepzn - hardtekk",
+          "file": "sound/TikTok%20Sounds/Mepzn%20-%20hardtekk.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "mr saxobeat bass boosted",
+          "file": "sound/TikTok%20Sounds/mr%20saxobeat%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "paparazzi - bass boosted",
+          "file": "sound/TikTok%20Sounds/paparazzi%20-%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "poster boy bass boosted",
+          "file": "sound/TikTok%20Sounds/poster%20boy%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "prodarvee - animal i have become hardtekk",
+          "file": "sound/TikTok%20Sounds/prodarvee%20-%20animal%20i%20have%20become%20hardtekk.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "psycho dreams - bass boosted",
+          "file": "sound/TikTok%20Sounds/psycho%20dreams%20-%20bass%20boosted.mp3",
+          "format": "mp3"
+        },
+        {
+          "title": "tuesday bass boosted",
+          "file": "sound/TikTok%20Sounds/tuesday%20bass%20boosted.mp3",
+          "format": "mp3"
+        }
+      ]
     }
   ]
 }
