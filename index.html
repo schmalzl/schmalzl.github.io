@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0B"><title>SUBSONIC</title>
+<link rel="stylesheet" href="css/main.css"></head>
+<body class="fx">
+<section id="login" class="wrap">
+<h1 class="logo">SUB<span>SONIC</span></h1>
+<p class="tag">BUILT FOR LIFTERS. BUILT FOR PRs.</p>
+<p class="dim">A curated collection of hardcore, bass-boosted and sped-up tracks for people who train hard. No distractions. No algorithms. Just music.</p>
+<div class="panel"><h2>INVITE ONLY</h2><p>Want access? DM the admin on Instagram.</p><p><a href="https://www.instagram.com/e30.kian/" target="_blank" rel="noopener">@e30.kian</a></p></div>
+<form id="lf" class="panel" novalidate><h2>LOGIN</h2>
+<label>USERNAME<input id="lu" type="text" autocomplete="username" autocapitalize="off" spellcheck="false"></label>
+<label>PIN<input id="lp" type="password" inputmode="numeric" autocomplete="current-password"></label>
+<div id="le" class="err" role="alert"></div><button id="lb">LOGIN</button></form>
+<div class="panel"><h2>REGISTERED USERS</h2><p id="ul" class="mono dim">...</p></div>
+<div class="panel" id="nw" hidden><h2>NEWS</h2><div id="nl"></div></div>
+<footer>DEVELOPED BY KIAN SCHMALZL &middot; V<span data-ver></span></footer>
+</section>
+<section id="loading" hidden><pre id="log"></pre><div class="bar"><i id="pb"></i></div><div id="pct" class="mono">0%</div></section>
+<main id="app" hidden>
+<nav id="nav"><button data-t="music" class="on">MUSIC</button><button data-t="settings">SETTINGS</button><button data-t="about">ABOUT</button><button data-t="stats">STATS</button></nav>
+<section id="music" class="tab on">
+<div class="ca">
+<div class="panel"><h2>NOW PLAYING</h2><div class="lcd"><div id="title">NO TRACK</div><div id="artist" class="dim">-</div><div id="status">STOPPED</div></div><div id="err" class="err"></div></div>
+<div class="panel"><h2>CONTROLS</h2>
+<div class="ctl"><button id="prev">PREV</button><button id="pp" class="big">PLAY</button><button id="next">NEXT</button></div>
+<div class="ctl"><span id="tcur" class="mono">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="tdur" class="mono">0:00</span></div>
+<div class="ctl"><span class="mono dim">VOL</span><input id="vol" type="range" min="0" max="1" step="0.01" aria-label="Volume"><button id="mode"></button></div></div>
+<div class="panel"><h2>ANALYZER</h2><canvas id="vis"></canvas></div>
+</div>
+<div class="panel cb"><h2>LIBRARY</h2><input id="q" type="search" placeholder="Search artist or track" aria-label="Search"><div id="lib"></div></div>
+</section>
+<section id="settings" class="tab"><div id="set"></div></section>
+<section id="about" class="tab"><div class="panel"><h2>ABOUT</h2><p class="lcd big2">SUBSONIC</p><p>An underground music player built for lifters.</p><p class="dim">A manually curated music collection focused on high-energy training music. No algorithms, no recommendations, no distractions.</p><p>Developer: Kian Schmalzl<br>Version: <span data-ver></span><br>Technology: HTML, CSS, JavaScript<br>Hosting: GitHub Pages</p></div>
+<div class="panel"><h2>CHANGELOG</h2><pre id="cl"></pre></div></section>
+<section id="stats" class="tab"><div id="st"></div></section>
+</main>
+<script type="module" src="js/app.js"></script>
+</body></html>

@@ -1,0 +1,17 @@
+SUBSONIC CHANGELOG
+==================
+
+VERSION 0.1.0
+DATE: 2026-11-18
+
+[ADDED]
+- Login screen with client-side access gate (PBKDF2 salted hashes), masked user list and news.
+- Diagnostic-style loading screen driven by real initialization steps.
+- Music library from data/music.json, grouped by artist, with search.
+- Playback: play/pause, prev/next, seek, volume, repeat one/all/none, Media Session.
+- Visualizer: meter, spectrum, waveform, spectrogram, oscilloscope.
+- Settings (persisted locally), About, local Stats.
+- admin/manage_users.py and admin/generate_manifest.py.
+
+[FIXED]
+- Initial release.
