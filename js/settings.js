@@ -1,10 +1,10 @@
 import * as S from './storage.js';
 import { esc } from './config.js';
-const D = { repeat: 'one', volume: 0.8, autonext: true, remember: true, vis: 'spectrum', visOn: true, sens: 1.5, color: '#B7FF00', fps: 30, font: 14, compact: false, fx: true };
+const D = { repeat: 'one', volume: 0.8, autonext: true, remember: true, vis: 'spectrum', visOn: true, sens: 1.5, color: '#B7FF00', fps: 30, font: 14, compact: false };
 const SCHEMA = [
   ['PLAYBACK', [['repeat', 'Repeat mode', 'sel', ['one', 'all', 'none']], ['volume', 'Default volume', 'rng', 0, 1, 0.05], ['autonext', 'Play next track when finished (no repeat)', 'chk'], ['remember', 'Remember last track and position', 'chk']]],
-  ['VISUALIZER', [['visOn', 'Visualizer enabled', 'chk'], ['vis', 'Type', 'sel', ['meter', 'spectrum', 'waveform', 'spectrogram', 'scope']], ['sens', 'Sensitivity', 'rng', 0.5, 3, 0.1], ['color', 'Color', 'sel', ['#B7FF00', '#FF6A00', '#FF3030', '#E6E6E6']], ['fps', 'FPS limit', 'sel', [15, 30, 60]]]],
-  ['APPEARANCE', [['font', 'Font size', 'sel', [12, 14, 16]], ['compact', 'Compact layout', 'chk'], ['fx', 'Scanline effect', 'chk']]]
+  ['VISUALIZER', [['visOn', 'Visualizer enabled', 'chk'], ['vis', 'Type', 'sel', ['meter', 'spectrum', 'waveform', 'spectrogram', 'scope']], ['sens', 'Sensitivity', 'rng', 0.5, 3, 0.1], ['color', 'Color', 'sel', ['#B7FF00', '#2D7BFF', '#FF3030', '#E6E6E6']], ['fps', 'FPS limit', 'sel', [15, 30, 60]]]],
+  ['APPEARANCE', [['font', 'Font size', 'sel', [12, 14, 16]], ['compact', 'Compact layout', 'chk']]]
 ];
 let v = { ...D, ...S.get('settings', {}) };
 const subs = [];

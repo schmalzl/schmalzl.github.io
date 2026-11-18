@@ -2,9 +2,9 @@
   "users": [
     {
       "name": "KIANSCHMALZL",
-      "salt": "fdf4454368b623f50b842c85ea6c75e7",
+      "salt": "507b6f78149a68d95235280e88d69714",
       "iterations": 100000,
-      "hash": "69f10a116ec1a99d552cd2e7586cebba05deeef6a633c2696ab9dc78403ee746"
+      "hash": "130df15cbbab8e34082ee1123bb9bcb01d09b9c8d94cb500a3ee454c8aca96ea"
     }
   ]
 }

@@ -1,6 +1,17 @@
 SUBSONIC CHANGELOG
 ==================
 
+VERSION 0.1.1
+DATE: 2026-11-18
+
+[CHANGED]
+- Removed the CRT scanline effect and its setting.
+- New black, blue and green color scheme; the logo is now green and blue.
+- Track list items are smaller and more compact.
+
+[FIXED]
+- iPhone: audio session set to playback so sound can continue with the screen locked or the browser in the background, and the audio engine resumes when returning to the page.
+
 VERSION 0.1.0
 DATE: 2026-11-18
 

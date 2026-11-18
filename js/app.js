@@ -13,7 +13,6 @@ document.querySelectorAll('[data-ver]').forEach(e => { e.textContent = C.version
 function applyLook() {
   document.documentElement.style.setProperty('--fs', St.get('font') + 'px');
   document.body.classList.toggle('compact', St.get('compact'));
-  document.body.classList.toggle('fx', St.get('fx'));
 }
 St.onChange(applyLook); applyLook();
 

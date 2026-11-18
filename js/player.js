@@ -14,6 +14,7 @@ export function initPlayer(flat) {
   function initAudio() {
     if (!ctx) {
       try {
+        if (navigator.audioSession) navigator.audioSession.type = 'playback';
         ctx = new (window.AudioContext || window.webkitAudioContext)();
         const an = ctx.createAnalyser(); an.fftSize = 1024; an.smoothingTimeConstant = 0.8;
         ctx.createMediaElementSource(a).connect(an); an.connect(ctx.destination);
@@ -64,6 +65,7 @@ export function initPlayer(flat) {
     else if (St.get('autonext') && i < flat.length - 1) step(1);
     else { status('STOPPED'); $('pp').textContent = 'PLAY'; }
   };
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && ctx && !a.paused && ctx.state !== 'running') ctx.resume(); });
   if ('mediaSession' in navigator) {
     const h = { play: toggle, pause: toggle, previoustrack: () => step(-1), nexttrack: () => step(1) };
     for (const k in h) { try { navigator.mediaSession.setActionHandler(k, h[k]); } catch { /* unsupported */ } }
