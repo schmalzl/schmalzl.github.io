@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "name": "KIANSCHMALZL",
-      "salt": "892de721699e7ba69d233ec011a044c4",
+      "name": "KianSchmalzl",
+      "salt": "ff9a2ce500420a331295e91381a68250",
       "iterations": 100000,
-      "hash": "11d7b9a34e80a2fa0b23364f77c2b00e7fedcb629bd4821c6146858be8ec9fe3"
+      "hash": "9d2ca9a8bc94c47e07de2449a833211a75474281b6facbde2eb7801867f63e0f"
     }
   ]
 }

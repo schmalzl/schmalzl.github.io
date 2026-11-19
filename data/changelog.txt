@@ -1,6 +1,36 @@
 SUBSONIC CHANGELOG
 ==================
 
+VERSION 1.4.1
+DATE: 2026-11-19
+
+[CHANGED]
+- Version number set to 1.4.1.
+- Now playing, controls and analyzer are only shown on the Music tab.
+- New color palette: dark grey, blue and gold (#d4a22f); green removed. Now playing text is light grey and the selected track is grey.
+- All buttons use a flat style.
+- Settings content is left-aligned.
+- The repeat button is small and sits next to the seek bar.
+- A saved green visualizer color is switched to gold.
+
+VERSION 0.1.3
+DATE: 2026-11-19
+
+[ADDED]
+- Button to clear recent tracks and sessions while keeping total playtime.
+- Personal note in the About section.
+
+[CHANGED]
+- Now playing, controls and analyzer stay visible on every tab, like the tab bar.
+- Removed the "Controls" and "Analyzer" headers and the play/stop status label.
+- Tab bar buttons are flat.
+- Logo and tagline are centered on the login screen.
+- Recent tracks and sessions are scrollable lists.
+- Removed the font size setting.
+
+[FIXED]
+- Error messages in the player disappear after a few seconds.
+
 VERSION 0.1.2
 DATE: 2026-11-18
 

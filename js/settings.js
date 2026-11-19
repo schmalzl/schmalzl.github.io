@@ -1,13 +1,13 @@
 import * as S from './storage.js';
 import { esc, ask } from './config.js';
-const D = { repeat: 'one', autonext: true, remember: true, vis: 'spectrum', visOn: true, sens: 1.5, color: '#27B33F', fps: 30, compact: true };
+const D = { repeat: 'one', autonext: true, remember: true, vis: 'spectrum', visOn: true, sens: 1.5, color: '#d4a22f', fps: 30, compact: true };
 const SCHEMA = [
   ['PLAYBACK', [['repeat', 'Repeat mode', 'sel', ['one', 'all', 'none']], ['autonext', 'Play next track when finished (no repeat)', 'chk'], ['remember', 'Remember last track and position', 'chk']]],
-  ['VISUALIZER', [['visOn', 'Visualizer enabled', 'chk'], ['vis', 'Type', 'sel', ['meter', 'spectrum', 'waveform', 'spectrogram', 'scope']], ['sens', 'Sensitivity', 'rng', 0.5, 3, 0.1], ['color', 'Color', 'sel', ['#27B33F', '#1D56B8', '#FF3030', '#E6E6E6']], ['fps', 'FPS limit', 'sel', [15, 30, 60]]]],
+  ['VISUALIZER', [['visOn', 'Visualizer enabled', 'chk'], ['vis', 'Type', 'sel', ['meter', 'spectrum', 'waveform', 'spectrogram', 'scope']], ['sens', 'Sensitivity', 'rng', 0.5, 3, 0.1], ['color', 'Color', 'sel', ['#d4a22f', '#1D56B8', '#FF3030', '#E6E6E6']], ['fps', 'FPS limit', 'sel', [15, 30, 60]]]],
   ['APPEARANCE', [['compact', 'Compact layout', 'chk']]]
 ];
 let v = { ...D, ...S.get('settings', {}) };
-v.color = { '#B7FF00': '#27B33F', '#2D7BFF': '#1D56B8' }[v.color] || v.color;
+v.color = { '#B7FF00': '#d4a22f', '#27B33F': '#d4a22f', '#2D7BFF': '#1D56B8' }[v.color] || v.color;
 const subs = [];
 export const get = k => v[k];
 export const onChange = f => subs.push(f);

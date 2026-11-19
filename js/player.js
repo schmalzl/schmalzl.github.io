@@ -10,7 +10,7 @@ export function initPlayer(flat) {
   const lib = renderLibrary($('lib'), flat, n => go(n, true));
   let errT = 0, i = -1, ctx = null, lastT = 0, seeking = false, pos = 0, saved = 0;
   const err = m => { $('err').textContent = m; clearTimeout(errT); errT = setTimeout(() => { $('err').textContent = ''; }, 4000); };
-  const label = () => { $('mode').textContent = 'REPEAT: ' + St.get('repeat').toUpperCase(); };
+  const label = () => { const m = St.get('repeat'); $('mode').textContent = 'RPT ' + m.toUpperCase(); $('mode').setAttribute('aria-label', 'Repeat mode: ' + m); };
   function initAudio() {
     if (!ctx) {
       try {

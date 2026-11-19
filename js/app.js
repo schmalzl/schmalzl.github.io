@@ -61,6 +61,7 @@ $('nav').onclick = e => {
   const t = e.target.dataset.t; if (!t) return;
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b === e.target));
   document.querySelectorAll('.tab').forEach(s => s.classList.toggle('on', s.id === t));
+  $('pl').hidden = t !== 'music';
   if (t === 'settings') St.render($('set'), { reset: St.reset, stats: Stats.reset, all: () => { S.clearAll(); location.reload(); } });
   if (t === 'stats') showStats();
 };
