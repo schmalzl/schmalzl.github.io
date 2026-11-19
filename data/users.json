@@ -17,6 +17,12 @@
       "salt": "1943d60cb27dcd08653f87d2378d3116",
       "iterations": 100000,
       "hash": "49a41a748f887ddefbb914736dcfd80c2733dd1f807650744baec9815f816973"
+    },
+    {
+      "name": "NoelHeisig",
+      "salt": "958c3605a9cc8570d8f01972c96d8e94",
+      "iterations": 100000,
+      "hash": "4446c8fbb8e747f0ba9c8688b76fc3a81b14673d77da17f0f3ebea45094e2062"
     }
   ]
 }
