@@ -5,6 +5,18 @@
       "salt": "ff9a2ce500420a331295e91381a68250",
       "iterations": 100000,
       "hash": "9d2ca9a8bc94c47e07de2449a833211a75474281b6facbde2eb7801867f63e0f"
+    },
+    {
+      "name": "LeopoldDirschl",
+      "salt": "92183d12f454b6c0a505f9fd7aecb063",
+      "iterations": 100000,
+      "hash": "42190dc9c7a99b8daeb3fbfd4d5ea13a5af5c6f064df2a3c7ebcde8d6a06a311"
+    },
+    {
+      "name": "MichiMeier",
+      "salt": "1943d60cb27dcd08653f87d2378d3116",
+      "iterations": 100000,
+      "hash": "49a41a748f887ddefbb914736dcfd80c2733dd1f807650744baec9815f816973"
     }
   ]
 }
