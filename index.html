@@ -19,20 +19,19 @@
 </section>
 <section id="loading" hidden><pre id="log"></pre><div class="bar"><i id="pb"></i></div><div id="pct" class="mono">0%</div></section>
 <main id="app" hidden>
-<nav id="nav"><button data-t="music" class="on">MUSIC</button><button data-t="settings">SETTINGS</button><button data-t="about">ABOUT</button><button data-t="stats">STATS</button><button id="lo" class="danger">LOGOUT</button></nav>
-<section id="music" class="tab on">
-<div class="ca">
-<div class="panel"><h2>NOW PLAYING</h2><div class="lcd"><div id="title">NO TRACK</div><div id="artist" class="dim">-</div><div id="status">STOPPED</div></div><div id="err" class="err"></div></div>
-<div class="panel"><h2>CONTROLS</h2>
+<div id="top"><nav id="nav"><button data-t="music" class="on">MUSIC</button><button data-t="settings">SETTINGS</button><button data-t="about">ABOUT</button><button data-t="stats">STATS</button><button id="lo" class="danger">LOGOUT</button></nav><div id="pl">
+<div class="panel"><h2>NOW PLAYING</h2><div class="lcd"><div id="title">NO TRACK</div><div id="artist" class="dim">-</div><div id="err" class="err"></div></div></div>
+<div class="panel">
 <div class="ctl"><button id="prev">PREV</button><button id="pp" class="big">PLAY</button><button id="next">NEXT</button></div>
 <div class="ctl"><span id="tcur" class="mono">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="tdur" class="mono">0:00</span></div>
 <div class="ctl"><button id="mode"></button></div></div>
-<div class="panel"><h2>ANALYZER</h2><canvas id="vis"></canvas></div>
-</div>
+<div class="panel vis-p"><canvas id="vis"></canvas></div>
+</div></div>
+<section id="music" class="tab on">
 <div class="panel cb"><h2>LIBRARY</h2><input id="q" type="search" placeholder="Search artist or track" aria-label="Search"><div id="lib"></div></div>
 </section>
 <section id="settings" class="tab"><div id="set"></div></section>
-<section id="about" class="tab"><div class="panel"><h2>ABOUT</h2><p class="lcd big2">SUBSONIC</p><p>An underground music player built for lifters.</p><p class="dim">A manually curated music collection focused on high-energy training music. No algorithms, no recommendations, no distractions.</p><p>Developer: Kian Schmalzl<br>Version: <span data-ver></span><br>Technology: HTML, CSS, JavaScript<br>Hosting: GitHub Pages</p></div>
+<section id="about" class="tab"><div class="panel"><h2>ABOUT</h2><p class="lcd big2">SUBSONIC</p><p>An underground music player built for lifters.</p><p class="dim">A manually curated music collection focused on high-energy training music. No algorithms, no recommendations, no distractions.</p><p>I am a lifter myself and found myself switching to TikTok sounds again and again.<br>Soundcloud ads suck too. So I made an app that gets rid of ads and contains the essence of bass boosted songs.<br>If you have song recommendations, DM me on instagram (must be a registered user).</p><p>Developer: Kian Schmalzl<br>Version: <span data-ver></span><br>Technology: HTML, CSS, JavaScript<br>Hosting: GitHub Pages</p></div>
 <div class="panel"><h2>CHANGELOG</h2><pre id="cl"></pre></div></section>
 <section id="stats" class="tab"><div id="st"></div></section>
 </main>

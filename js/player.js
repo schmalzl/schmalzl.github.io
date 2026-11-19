@@ -8,8 +8,8 @@ const $ = id => document.getElementById(id);
 export function initPlayer(flat) {
   const a = new Audio(); a.preload = 'none'; 
   const lib = renderLibrary($('lib'), flat, n => go(n, true));
-  let i = -1, ctx = null, lastT = 0, seeking = false, pos = 0, saved = 0;
-  const status = s => { $('status').textContent = s; };
+  let errT = 0, i = -1, ctx = null, lastT = 0, seeking = false, pos = 0, saved = 0;
+  const err = m => { $('err').textContent = m; clearTimeout(errT); errT = setTimeout(() => { $('err').textContent = ''; }, 4000); };
   const label = () => { $('mode').textContent = 'REPEAT: ' + St.get('repeat').toUpperCase(); };
   function initAudio() {
     if (!ctx) {
@@ -20,7 +20,7 @@ export function initPlayer(flat) {
         const an = ctx.createAnalyser(); an.fftSize = 1024; an.smoothingTimeConstant = 0.8;
         ctx.createMediaElementSource(a).connect(an); an.connect(ctx.destination);
         startVis($('vis'), an, () => ({ type: St.get('vis'), on: St.get('visOn'), sens: St.get('sens'), color: St.get('color'), fps: St.get('fps') }));
-      } catch (e) { $('err').textContent = 'Visualizer unavailable: ' + e.message; }
+      } catch (e) { err('Visualizer unavailable: ' + e.message); }
     }
     if (ctx && ctx.state === 'suspended') ctx.resume();
   }
@@ -31,10 +31,10 @@ export function initPlayer(flat) {
   }
   function go(n, play) {
     if (!flat.length) return; show(n);
-    if (play) { initAudio(); status('LOADING...'); Stats.startTrack(flat[n]); a.play().catch(e => { status('ERROR'); $('err').textContent = 'Playback failed: ' + e.message; }); }
+    if (play) { initAudio(); Stats.startTrack(flat[n]); a.play().catch(e => { err('Playback failed: ' + e.message); }); }
   }
   const step = d => go((i + d + flat.length) % flat.length, true);
-  const toggle = () => { if (i < 0) return go(0, true); if (a.paused) { initAudio(); a.play().catch(() => status('ERROR')); } else a.pause(); };
+  const toggle = () => { if (i < 0) return go(0, true); if (a.paused) { initAudio(); a.play().catch(() => {}); } else a.pause(); };
   $('pp').onclick = toggle; $('next').onclick = () => step(1);
   $('prev').onclick = () => (a.currentTime > 3 ? (a.currentTime = 0) : step(-1));
   $('mode').onclick = () => { const m = ['one', 'all', 'none']; St.set('repeat', m[(m.indexOf(St.get('repeat')) + 1) % 3]); };
@@ -44,12 +44,12 @@ export function initPlayer(flat) {
   $('seek').onpointerup = () => { seeking = false; };
   $('seek').oninput = e => { if (a.duration) a.currentTime = e.target.value / 1000 * a.duration; };
   $('q').oninput = e => lib.filter(e.target.value);
-  a.onplaying = () => { lastT = performance.now(); status('PLAYING'); $('pp').textContent = 'PAUSE'; };
-  a.onpause = () => { lastT = 0; if (!a.ended) status('PAUSED'); $('pp').textContent = 'PLAY'; };
-  a.onwaiting = () => { lastT = 0; status('BUFFERING...'); };
+  a.onplaying = () => { lastT = performance.now(); $('pp').textContent = 'PAUSE'; };
+  a.onpause = () => { lastT = 0; $('pp').textContent = 'PLAY'; };
+  a.onwaiting = () => { lastT = 0; };
   a.ondurationchange = () => { $('tdur').textContent = fmt(a.duration); };
   a.onloadedmetadata = () => { if (pos) { a.currentTime = Math.min(pos, Math.max(0, a.duration - 1)); pos = 0; } };
-  a.onerror = () => { lastT = 0; status('ERROR'); $('err').textContent = i >= 0 ? 'File unavailable: ' + flat[i].file : ''; };
+  a.onerror = () => { lastT = 0; if (i >= 0) err('File unavailable: ' + flat[i].file); };
   a.ontimeupdate = () => {
     const n = performance.now();
     if (lastT && !a.paused && !a.ended) Stats.add(Math.min((n - lastT) / 1000, 1.5));
@@ -63,7 +63,7 @@ export function initPlayer(flat) {
     if (m === 'one') { a.currentTime = 0; Stats.startTrack(flat[i]); a.play(); }
     else if (m === 'all') step(1);
     else if (St.get('autonext') && i < flat.length - 1) step(1);
-    else { status('STOPPED'); $('pp').textContent = 'PLAY'; }
+    else { $('pp').textContent = 'PLAY'; }
   };
   document.addEventListener('visibilitychange', () => { if (!document.hidden && ctx && !a.paused && ctx.state !== 'running') ctx.resume(); });
   if ('mediaSession' in navigator) {

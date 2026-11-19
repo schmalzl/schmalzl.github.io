@@ -11,7 +11,6 @@ const frame = () => new Promise(r => requestAnimationFrame(r));
 document.querySelectorAll('[data-ver]').forEach(e => { e.textContent = C.version; });
 
 function applyLook() {
-  document.documentElement.style.setProperty('--fs', St.get('font') + 'px');
   document.body.classList.toggle('compact', St.get('compact'));
 }
 St.onChange(applyLook); applyLook();
@@ -63,6 +62,12 @@ $('nav').onclick = e => {
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b === e.target));
   document.querySelectorAll('.tab').forEach(s => s.classList.toggle('on', s.id === t));
   if (t === 'settings') St.render($('set'), { reset: St.reset, stats: Stats.reset, all: () => { S.clearAll(); location.reload(); } });
-  if (t === 'stats') { Stats.render($('st')); $('st').insertAdjacentHTML('beforeend', '<button id="rs" class="danger">RESET STATISTICS</button>'); $('rs').onclick = async () => { if (await ask('Delete all listening statistics?')) { Stats.reset(); Stats.render($('st')); } }; }
+  if (t === 'stats') showStats();
 };
 $('lo').onclick = () => location.reload();
+function showStats() {
+  Stats.render($('st'));
+  $('st').insertAdjacentHTML('beforeend', '<button id="ch">CLEAR RECENT &amp; SESSIONS</button><button id="rs" class="danger">RESET ALL STATISTICS</button>');
+  $('ch').onclick = async () => { if (await ask('Clear the recent tracks and sessions lists? Total playtime is kept.')) { Stats.clearHistory(); showStats(); } };
+  $('rs').onclick = async () => { if (await ask('Delete all listening statistics?')) { Stats.reset(); showStats(); } };
+}

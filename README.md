@@ -1,4 +1,4 @@
-# SUBSONIC 0.1.2
+# SUBSONIC 0.1.3
 
 Underground music player for lifters. Static site: HTML, CSS, vanilla JS (ES modules). No backend, no build step.
 
